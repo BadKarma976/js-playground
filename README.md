@@ -1,2 +1,2 @@
 # js-playground
-My first (public) repository.
+A simple repository to get me used to GitHub.
