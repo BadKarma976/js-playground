@@ -35,7 +35,7 @@ $(function () {
 
         if (total >= 200) {
             $("p").eq(0).html(`Keep Playing!`);
-            let broke 0;
+            let broke = 0;
         } else {
             $("p").eq(0).html(`You're broke! Quit!`);
             let broke = 1;
@@ -45,30 +45,30 @@ $(function () {
         $("h2").eq(0).html("");
         $("p").eq(0).html("");
         if (broke === 0) {
-        $("h2").eq(0).append("Flipping a coin:<br>");
-        let rand2 = 0;
-        rand2 = RandInt(1, 4);
-        await sleep(1000);
-        function CoinFlip() {
-            /* Choice 1+4 is the least likely to be picked,
+            $("h2").eq(0).append("Flipping a coin:<br>");
+            let rand2 = 0;
+            rand2 = RandInt(1, 4);
+            await sleep(1000);
+            function CoinFlip() {
+                /* Choice 1+4 is the least likely to be picked,
             because of the psuedorandom
             number generator that I picked. (inclusive number generator,
             but treating it as exclusive to have
             better psuedorandom chances) */
-            if (rand2 === 1) {
-                rand2 = RandInt(1, 4);
-                CoinFlip();
-            } else if (rand2 === 2) {
-                $("h2").eq(0).append(`Heads!`);
-            } else if (rand2 === 3) {
-                $("h2").eq(0).append(`Tails!`);
-            } else if (rand2 === 4) {
-                rand2 = RandInt(1, 4);
-                CoinFlip();
+                if (rand2 === 1) {
+                    rand2 = RandInt(1, 4);
+                    CoinFlip();
+                } else if (rand2 === 2) {
+                    $("h2").eq(0).append(`Heads!`);
+                } else if (rand2 === 3) {
+                    $("h2").eq(0).append(`Tails!`);
+                } else if (rand2 === 4) {
+                    rand2 = RandInt(1, 4);
+                    CoinFlip();
+                }
             }
+            CoinFlip();
         }
-        CoinFlip();
-    }
     }
     main();
 });
