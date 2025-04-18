@@ -32,13 +32,13 @@ $(function () {
             total = rand + total;
             $("h2").eq(0).append(`${rand}<br>`);
         }
-
+        let broke;
         if (total >= 200) {
             $("p").eq(0).html(`Keep Playing!`);
-            let broke = 0;
+            broke = 0;
         } else {
             $("p").eq(0).html(`You're broke! Quit!`);
-            let broke = 1;
+            broke = 1;
         }
 
         await sleep(3000);
