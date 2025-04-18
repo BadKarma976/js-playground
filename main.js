@@ -35,13 +35,16 @@ $(function () {
 
         if (total >= 200) {
             $("p").eq(0).html(`Keep Playing!`);
+            let broke 0;
         } else {
             $("p").eq(0).html(`You're broke! Quit!`);
+            let broke = 1;
         }
 
         await sleep(3000);
         $("h2").eq(0).html("");
         $("p").eq(0).html("");
+        if (broke === 0) {
         $("h2").eq(0).append("Flipping a coin:<br>");
         let rand2 = 0;
         rand2 = RandInt(1, 4);
@@ -65,6 +68,7 @@ $(function () {
             }
         }
         CoinFlip();
+    }
     }
     main();
 });
